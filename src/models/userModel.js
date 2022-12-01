@@ -2,15 +2,16 @@
 const mysql = require("./mysqlConnect");
 const jwt = require('jsonwebtoken');
 
-get= async ()=>{
+get = async ()=>{
    const users = await  mysql.query("SELECT * FROM user");
    return users;
 }
 
-login= async (data)=>{
+login = async (data)=>{
    sql="SELECT id, name, email FROM user WHERE email='"
    +data.email+"' and password='"+data.password+"'";
    const users = await  mysql.query(sql);
+   console.log(sql)
    result=null;
    if(users[0].id){
       const id=users[0].id;

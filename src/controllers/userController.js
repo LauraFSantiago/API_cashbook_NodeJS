@@ -1,18 +1,18 @@
 const userModel = require('../models/userModel');
 
-exports.get=async()=>{
+exports.get = async()=>{
    return await userModel.get();
 }
-exports.login=async(data)=>{
+exports.login = async(data)=>{
     return await userModel.login(data);
      
  }
 
- exports.logout=async(token)=>{
+ exports.logout = async(token)=>{
     return await userModel.login(data);
      
  }
 
- exports.verifyJWT=(token)=>{
+ exports.verifyJWT = (token)=>{
     return userModel.verifyJWT(token);
  }
